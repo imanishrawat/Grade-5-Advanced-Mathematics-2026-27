@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Grade 5 Advanced Math: End of Term 1 Practice</title>
+<style>
+:root{--bg:#f6f8fb;--card:#fff;--ink:#1c2b3a;--mute:#5b6b7b;--line:#d5dde6;--accent:#0b5d8a;--ok:#0f7a3d;--okbg:#e3f5ea;--bad:#b3261e;--badbg:#fde8e6;--warn:#8a4b00;--warnbg:#ffe7c2}
+@media(prefers-color-scheme:dark){:root{color-scheme:dark;--bg:#12181f;--card:#1b242d;--ink:#e8eef4;--mute:#9fb0c0;--line:#33424f;--accent:#6bb8e6;--ok:#6fd19a;--okbg:#17382a;--bad:#ff9a92;--badbg:#3f1e1b;--warn:#ffc266;--warnbg:#47300d}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.55 Georgia,"Times New Roman",serif}
+main{max-width:760px;margin:0 auto;padding:16px}
+header{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;justify-content:space-between;margin-bottom:12px}
+h1{font-size:1.25rem;margin:0}
+.sub{color:var(--mute);font-size:.9rem;font-family:system-ui,sans-serif}
+button{font:600 .95rem system-ui,sans-serif;padding:10px 16px;border-radius:8px;border:1px solid var(--accent);background:var(--accent);color:#fff;cursor:pointer}
+button.alt{background:transparent;color:var(--accent)}
+button:disabled{opacity:.45;cursor:not-allowed}
+button:focus-visible,textarea:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+#dots{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0}
+#dots button{width:34px;height:34px;padding:0;background:var(--card);color:var(--ink);border-color:var(--line);font-size:.8rem}
+#dots button.cur{border:2px solid var(--accent)}
+#dots button.right{background:var(--okbg);color:var(--ok)}
+#dots button.wrong{background:var(--badbg);color:var(--bad)}
+.q{display:none;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px}
+.q.show{display:block}
+.tag{font:.85rem system-ui,sans-serif;color:var(--mute)}
+.q h2{margin:2px 0 10px;font-size:1.15rem}
+.opt{display:block;width:100%;text-align:left;margin:8px 0;padding:12px 14px;background:var(--bg);color:var(--ink);border:1px solid var(--line);font-weight:400;font-family:inherit;font-size:1rem}
+.opt.sel{border:2px solid var(--accent)}
+.opt.right{background:var(--okbg);border-color:var(--ok)}
+.opt.wrong{background:var(--badbg);border-color:var(--bad)}
+textarea{width:100%;min-height:110px;padding:10px;font:1rem Georgia,serif;background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:8px}
+.fb{display:none;margin-top:12px;padding:12px 14px;border-radius:8px;font-family:system-ui,sans-serif;font-size:.95rem}
+.fb.show{display:block}
+.fb.right{background:var(--okbg);color:var(--ok)}
+.fb.wrong{background:var(--badbg);color:var(--bad)}
+.fb.info{background:var(--bg);color:var(--ink);border:1px solid var(--line)}
+.fb b{display:block;margin-bottom:4px}
+.nav{display:flex;justify-content:space-between;gap:8px;margin-top:16px}
+.part{border-top:1px solid var(--line);padding:14px 0}.lab{font:600 .95rem system-ui,sans-serif;color:var(--accent)}#dots button{min-width:44px;width:auto;padding:0 6px}#dots button.g{background:var(--okbg);color:var(--ok);border-color:var(--ok)}#dots button.r{background:var(--badbg);color:var(--bad);border-color:var(--bad)}#dots button.o{background:var(--warnbg);color:var(--warn);border-color:var(--warn)}.mk{margin-top:8px}.mk button{margin-right:6px;padding:6px 10px;background:transparent;color:var(--ink);border-color:var(--line)}.mk button.sel{border:2px solid var(--accent)}#leg{margin:-4px 0 10px}
+.fig{margin:6px 0 10px;overflow-x:auto}.fig svg{display:block}.figrow{display:flex;flex-wrap:wrap;gap:18px;align-items:flex-start}.cap{font:600 .85rem system-ui,sans-serif}table.ft{border-collapse:collapse;font:.95rem system-ui,sans-serif}table.ft th,table.ft td{border:1px solid var(--line);padding:5px 12px;text-align:center;min-width:48px}table.ft th{background:var(--bg)}.hl{color:var(--accent);text-decoration:underline}pre.vm{display:inline-block;margin:4px 0;font:1.1rem/1.3 ui-monospace,Menlo,Consolas,monospace;white-space:pre}.note{display:inline-block;padding:8px 14px;border:1px solid var(--line);background:var(--bg);font:1.05rem ui-monospace,Menlo,monospace}
+.lines,.pn{display:none}
+footer{margin:16px 0;color:var(--mute);font:.8rem system-ui,sans-serif}
+@media print{
+ body:not(.ok)>*{display:none!important}
+ body:not(.ok)::before{content:"Printing is locked. Ask your teacher for the password.";display:block;padding:20px}
+ body{background:#fff;color:#000;font-size:12pt}
+ #dots,.nav,.fb,.chk,header button,textarea,.sub,footer{display:none!important}
+ .q{display:block!important;border:0;border-bottom:1px solid #999;border-radius:0;padding:10px 0;background:#fff}
+ .part{break-inside:avoid}
+ .opt{border:0;background:#fff;color:#000;padding:2px 0;margin:2px 0}
+ .lines{display:block;height:90px;border-bottom:1px solid #777;margin-top:30px;background:repeating-linear-gradient(#fff 0 29px,#999 29px 30px)}
+ .pn{display:block;margin:4px 0 12px;font-size:11pt}
+}
+</style></head>
+<body>
+<main>
+<header>
+ <div><h1>Grade 5 Advanced Math: End of Term 1 Practice</h1><div class="sub">Reveal Math. No calculator. Check each answer before you move on.</div></div>
+ <button class="alt" id="pr">Print</button>
+</header>
+<div class="pn">Name: ____________________ &nbsp; Class: ________ &nbsp; Date: __________</div>
+<div class="sub" id="score" aria-live="polite">Multiple choice score: 0 / 20</div>
+<div id="dots" role="group" aria-label="Question navigator"></div>
+<div class="sub" id="leg">✓ green: all parts correct. ◐ orange: some parts correct, wrong or not yet done. ✕ red: all parts wrong.</div>
+<div id="qs"></div>
+<footer>Each question has several parts. Questions 1 to 20 are multiple choice. Questions 21 to 25 are free response.</footer>
+</main>
+<script>
+let seed=1;const rnd=()=>{seed=seed+0x6D2B79F5|0;let t=Math.imul(seed^seed>>>15,1|seed);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296};
+const R=(a,b)=>a+Math.floor(rnd()*(b-a+1)),pick=a=>a[R(0,a.length-1)];
+const fmt=n=>(Math.round(n*1e6)/1e6).toLocaleString('en-US',{maximumFractionDigits:6}),C=fmt;
+const sup=n=>String(n).split('').map(c=>'⁰¹²³⁴⁵⁶⁷⁸⁹'[c]).join('');
+const O=['zero','one','two','three','four','five','six','seven','eight','nine','ten','eleven','twelve','thirteen','fourteen','fifteen','sixteen','seventeen','eighteen','nineteen'],TY=['','','twenty','thirty','forty','fifty','sixty','seventy','eighty','ninety'];
+const W=n=>n<20?O[n]:n<100?TY[n/10|0]+(n%10?'-'+O[n%10]:''):O[n/100|0]+' hundred'+(n%100?' '+W(n%100):'');
+const prt=n=>String(n).split('').map((c,i,s)=>c*10**(s.length-1-i)).filter(Boolean);
+const rep=(x,n)=>Array(n).fill(x).join(' × '),nmz=['Mia','Leo','Sara','Omar','Noor','Ravi','Lina','Zaid'],nm=()=>pick(nmz);
+function mc(q,ans,wr,e){ans=String(ans);const w=[];wr.map(String).forEach(x=>{if(x!==ans&&!w.includes(x)&&!/NaN|^-/.test(x))w.push(x)});
+ const n=parseFloat(ans.replace(/,/g,'')),sf=ans.replace(/^[\d.,]+/,'');
+ for(let k=1;w.length<3;k++){const c=isNaN(n)?'None of these '+k:fmt(n+k)+sf;if(c!==ans&&!w.includes(c))w.push(c)}
+ const o=[ans,...w.slice(0,3)];for(let i=3;i>0;i--){const j=R(0,i);[o[i],o[j]]=[o[j],o[i]]}return{q,o,a:o.indexOf(ans),e}}
+const mt=(q,t,e)=>({q,o:['True','False'],a:t?0:1,e}),fr=(q,ans,e)=>({q,ans,e});
+const PL=['ones','tens','hundreds','thousands','ten thousands','hundred thousands'],PN=['tenths','hundredths','thousandths'];
+const nu=(p,d)=>{const g=[0,0,0,0].map(()=>{let x;do x=R(1,9);while(x==d);return x});g[p]=d;return g.reverse().join('')};
+const wdp=(w,f,p,s)=>(w?W(w)+' and ':'')+W(f)+' '+(f==1&&!s?PN[p].slice(0,-1):PN[p]);
+const pad=(f,dp)=>String(f).padStart(dp,'0'),stp=(w,f,dp)=>`${w}.${pad(f,dp)}`;
+const ex5=(w,f,dp,sh)=>[w||'',...pad(f,dp).split('').map((c,j)=>c!='0'?`0.${'0'.repeat(j+sh)}${c}`:'')].filter(Boolean).join(' + ');
+const sh=x=>(x/100).toFixed(x%10?2:1);
+const G=[
+//1
+i=>{const l=R(3,9),w=R(2,6),h=R(2,5),A=l*w*h,t=i%4,B=l*w,cf=x=>x+' cubic feet';
+ if(t==0)return mc(`A ${pick(['freezer','refrigerator','storage chest'])}, shaped like a rectangular prism, is ${l} feet long, ${w} feet wide, and ${h} feet tall. What is its volume?`,cf(A),[cf(l+w+h),cf(l*w),cf(2*A),cf(A+l*w)],`V = l × w × h = ${l} × ${w} × ${h} = ${cf(A)}.`);
+ if(t==1){const L=l*10,Wd=w*5,V=L*Wd*h,cm=x=>C(x)+' cubic meters';return mc(`A swimming pool is ${L} meters long, ${Wd} meters wide, and ${h} meters deep. What is the volume of the pool?`,cm(V),[cm(L+Wd+h),cm(L*Wd),cm(V*2),cm(V/10)],`V = ${L} × ${Wd} × ${h} = ${cm(V)}.`)}
+ if(t==2)return mc('Do you agree or disagree? When all three edge lengths of a rectangular prism are doubled, the volume is also doubled.','Disagree. The volume becomes 8 times as great.',['Agree. The volume is doubled.','Disagree. The volume becomes 4 times as great.','Disagree. The volume becomes 6 times as great.'],`Try a prism ${l} by ${w} by ${h}: V = ${A}. Doubling every edge gives ${2*l} × ${2*w} × ${2*h} = ${8*A}, which is 8 times as great.`);
+ return mc(`A rectangular prism has a base area of ${B} square feet and a height of ${h} feet. Can you use a formula to find its volume?`,`Yes. V = B × h = ${cf(B*h)}`,['No. You also need the length and the width.',`Yes. V = B + h = ${cf(B+h)}`,`Yes. V = B × h = ${cf(B*h*2)}`],`The formula V = B × h uses the base area, so no other measurement is needed: ${B} × ${h} = ${B*h} cubic feet.`)},
+//2
+i=>{const a=R(4,15),n=R(3,9),L=R(2,5),Wd=R(2,4),s=x=>x+' cubic units',t=i%3;
+ if(i==8)return mc(`A box is packed with ${n} layers of unit cubes, with ${a} cubes in each layer. Which equation shows its volume?`,`${n} × ${a} = ${n*a}`,[`${n} + ${a} = ${n+a}`,`${n} × ${n} = ${n*n}`,`${a} × ${a} = ${a*a}`],`Number of layers × cubes in each layer: ${n} × ${a} = ${n*a} cubic units.`);
+ if(i==9)return mc(`The volume of a box is ${a*n} cubic units. Each layer has ${a} unit cubes. How many layers of unit cubes are in the box?`,n,[a*n-a,a*n*a,a,n+1],`${a*n} ÷ ${a} = ${n} layers.`);
+ if(i==10)return mc(`A rectangular prism is ${L} units long, ${Wd} units wide, and ${n} units tall. It is completely filled with unit cubes. What is its volume?`,s(L*Wd*n),[s(L*Wd),s(L+Wd+n),s(L*Wd+n),s(L*n)],`One layer has ${L} × ${Wd} = ${L*Wd} cubes. ${L*Wd} × ${n} layers = ${L*Wd*n} cubic units.`);
+ if(t==1)return mc(`A box has ${n} layers. Each layer has ${L} rows of ${Wd} unit cubes. What is the volume of the box?`,s(L*Wd*n),[s(L*Wd),s(L+Wd+n),s(L*Wd+n),s(L*n)],`Cubes in a layer: ${L} × ${Wd} = ${L*Wd}. Volume: ${L*Wd} × ${n} = ${L*Wd*n} cubic units.`);
+ return mc(`Number of layers: ${n}. Number of unit cubes in each layer: ${a}. What is the volume of the figure?`,s(a*n),[s(a+n),s(a*(n-1)),s(a*n*2),s(a*n+a)],`${a} × ${n} = ${a*n} cubic units.`)},
+//3
+i=>{const h=R(2,6),B=R(3,9)*2,l=R(5,12),w=R(2,4),hh=R(2,4),s=R(3,8),ft=x=>x+' feet';
+ if(i==0)return mc(`A fish tank has a volume of ${B*h} cubic feet. Its base is ${B} square feet. What is the height of the tank?`,ft(h),[ft(B*h-B),ft(B*h*B),ft(h+1),ft(B)],`V = B × h, so ${B*h} = ${B} × h and h = ${B*h} ÷ ${B} = ${h} feet.`);
+ if(i==1){let A=[R(10,22),R(8,14),R(8,14)],Bx=[R(10,22),R(8,14),R(8,14)];const v=x=>x[0]*x[1]*x[2];while(v(A)==v(Bx))Bx=[R(10,22),R(8,14),R(8,14)];
+  const T=['Suitcase A','Suitcase B','They have the same volume','There is not enough information'],a=v(A)>v(Bx)?0:1;
+  return mc(`Lina wants the suitcase with the greater volume. Suitcase A is ${A.join(' in. by ')} in. Suitcase B is ${Bx.join(' in. by ')} in. Which should she buy?`,T[a],T.filter((x,j)=>j!=a),`A: ${A.join(' × ')} = ${v(A)} cubic in. B: ${Bx.join(' × ')} = ${v(Bx)} cubic in. ${T[a]} has the greater volume.`)}
+ if(i==2)return mc(`A cargo container has a volume of ${l*w*hh} cubic meters, a height of ${hh} meters, and a width of ${w} meters. How long is the container?`,`${l} meters`,[`${l*w} meters`,`${l*hh} meters`,`${l+1} meters`,`${l*w*hh-w-hh} meters`],`${l*w*hh} = l × ${w} × ${hh}, so l = ${l*w*hh} ÷ ${w*hh} = ${l} meters.`);
+ if(i==3)return mc(`The volume of a rabbit hutch is ${l*w*hh} cubic feet. It is ${l} feet long and ${hh} feet high. What is its width?`,ft(w),[ft(w*hh),ft(l*hh),ft(w+1),ft(l*w*hh-l-hh)],`${l*w*hh} = ${l} × w × ${hh}, so w = ${l*w*hh} ÷ ${l*hh} = ${w} feet.`);
+ return mc(`The base of a rectangular prism is a square with sides of ${s} centimeters. Its volume is ${s*s*hh} cubic centimeters. What is its height?`,`${hh} cm`,[`${s*hh} cm`,`${hh+s} cm`,`${hh*2} cm`,`${s*s} cm`],`The base area is ${s} × ${s} = ${s*s}. Height = ${s*s*hh} ÷ ${s*s} = ${hh} cm.`)},
+//4
+i=>{const d=R(2,9),T=['10 times as much','one-tenth as much','100 times as much','one-hundredth as much'];
+ if(i<3){const k=R(0,4),g=PL.map(()=>{let x;do x=R(1,9);while(x==d);return x});g[k]=g[k+1]=d;const num=C(+[...g].reverse().join('')),ex=`Each place is worth 10 times the place to its right, so the ${d} in the ${PL[k+1]} place is 10 times the ${d} in the ${PL[k]} place.`;
+  if(i==0)return mc(`In ${num}, the value of the digit ${d} in the ${PL[k+1]} place is 10 times the value of the digit ${d} in the ____ place.`,PL[k],[PL[(k+2)%6],PL[(k+3)%6],PL[(k+4)%6],PL[k+1]],ex);
+  if(i==1)return mc(`In ${num}, the value of the digit ${d} in the ${PL[k+1]} place is ____ the value of the digit ${d} in the ${PL[k]} place.`,'10 times',['one-tenth','100 times','one-hundredth'],ex);
+  return mc(`In ${num}, the value of the digit ${d} in the ${PL[k]} place is ____ the value of the digit ${d} in the ${PL[k+1]} place.`,'one-tenth',['10 times','100 times','one-hundredth'],ex)}
+ if(i<7){let p1,e,p2;do{p1=R(0,3);e=pick([-2,-1,1,2]);p2=p1-e}while(p2<0||p2>3);
+  const cl=pick([['10 times',1],['one-tenth of',-1],['100 times',2],['one-hundredth of',-2]]),n1=nu(p1,d),n2=nu(p2,d);
+  return mt(`The digit ${d} in ${C(+n1)} is ${cl[0]} the value of the digit ${d} in ${C(+n2)}.`,cl[1]==e,`The ${d} in ${C(+n1)} is worth ${C(d*10**p1)} and the ${d} in ${C(+n2)} is worth ${C(d*10**p2)}. The first is ${fmt(10**e)} times the second, so the statement is ${cl[1]==e?'true':'false'}.`)}
+ const m=R(2,9);return mc(`On Tuesday, ${m*100} people attended a play. The same play had ${C(m*1000)} attendees on Saturday. Tuesday's attendance is ____ Saturday's attendance.`,'one-tenth as much as',['10 times as much as','100 times as much as','one-hundredth as much as'],`${m*100} is one-tenth of ${C(m*1000)}.`)},
+//5
+i=>{const dp=R(1,3),m=10**dp;let f=R(1,m-1);if(dp>1&&f%10==0)f++;const w=R(0,2)?R(1,99):0,st=stp(w,f,dp),wd=wdp(w,f,dp-1),pf=pad(f,dp),
+ sw=[`${w}.0${pf}`,`${w}.${[...pf].reverse().join('')}`,`${w}${pf}`,`${pf}.${w}`];
+ if(i<4)return mc(`What is ${st} in word form?`,wd,[wdp(w,f,dp%3),wdp(w,f,(dp+1)%3),(w?W(w)+' and ':'')+W(f),`${W(f)} and ${W(w||1)} ${PN[dp-1]}`],`The decimal part ends in the ${PN[dp-1]} place, so it is read "${wd}".`);
+ if(i<8)return mc(`What is ${ex5(w,f,dp,0)} in standard form?`,st,sw,`Put each digit in its place: ${st}.`);
+ if(i<10)return mc(`What is "${wd}" in standard form?`,st,sw,`The last digit is in the ${PN[dp-1]} place: ${st}.`);
+ return mc(`What is "${wd}" in expanded form?`,ex5(w,f,dp,0),[ex5(w,f,dp,1),ex5(w,f,dp,2),[w||'',...pf.split('')].filter(Boolean).join(' + ')],`Each digit keeps its place value: ${ex5(w,f,dp,0)}.`)},
+//6
+i=>{if(i<8){const dp=i%2?1:2,tn=i>=4;let v=R(100,9999);if(dp==1)v-=v%10;const x=(v/100).toFixed(dp),dv=tn?10:100,r=Math.floor((v+dv/2)/dv),fx=y=>tn?(y/10).toFixed(1):String(y);
+  return mc(`What is ${x} rounded to the nearest ${tn?'tenth':'whole number'}?`,fx(r),[fx(r+1),fx(r-1),fx(r+2),tn?String(Math.round(v/100)):(v/100).toFixed(1)],`Look at the digit to the right of the ${tn?'tenths':'ones'} place. If it is 5 or more, round up; otherwise keep the digit. ${x} rounds to ${fx(r)}.`)}
+ if(i==8){const t=R(100,999)/10;return mc(`Dana rounded a number to the nearest tenth and got ${t.toFixed(1)}. What number could she have rounded?`,(t-.03).toFixed(2),[(t+.06).toFixed(2),(t-.06).toFixed(2),(t+.1).toFixed(2)],`A number between ${(t-.05).toFixed(2)} and ${(t+.05).toFixed(2)} rounds to ${t.toFixed(1)}. ${(t-.03).toFixed(2)} is in that range.`)}
+ const v=R(10000,99999),n=(v/1000).toFixed(3),r1=Math.floor((v+50)/100)/10,tr=Math.floor(v/100)/10,r2=Math.floor((v+5)/10)/100,t2=Math.floor(v/10)/100;
+ if(i==9)return mc(`Which statement is true about ${n}?`,`${n} rounded to the nearest tenth is ${r1.toFixed(1)}.`,[`${n} rounded to the nearest tenth is ${(tr!=r1?tr:r1+.1).toFixed(1)}.`,`${n} rounded to the nearest hundredth is ${(t2!=r2?t2:r2+.01).toFixed(2)}.`,`${n} rounded to the nearest tenth is ${r2.toFixed(2)}.`],`Check the digit to the right of the place you round to: ${n} rounds to ${r1.toFixed(1)} (tenth) and ${r2.toFixed(2)} (hundredth).`);
+ if(i==10)return mc(`What is ${n} rounded to the nearest hundredth?`,r2.toFixed(2),[r1.toFixed(2),t2.toFixed(2),(r2+.01).toFixed(2),String(Math.round(v/1000))],`The thousandths digit decides: ${n} rounds to ${r2.toFixed(2)}.`);
+ const t=R(21,99)/10;
+ if(i==11)return mc(`Which number rounds to ${t.toFixed(1)} when rounded to the nearest tenth?`,(t+.04).toFixed(2),[(t+.06).toFixed(2),(t-.06).toFixed(2),(t+.1).toFixed(2)],`Numbers from ${(t-.05).toFixed(2)} up to just below ${(t+.05).toFixed(2)} round to ${t.toFixed(1)}.`);
+ const L=(a,b,c)=>[a,b,c].map(x=>x.toFixed(2)).join(', ');
+ return mc(`Which list has only numbers that round to ${t.toFixed(1)} when rounded to the nearest tenth?`,L(t-.04,t,t+.04),[L(t-.04,t,t+.06),L(t-.06,t,t+.04),L(t,t+.1,t+.04)],`Every number must be at least ${(t-.05).toFixed(2)} and less than ${(t+.05).toFixed(2)}.`)},
+//7
+i=>{if(i==7){const a=R(150,350)/10,b=R(500,900)/10,A=Math.round(b)-Math.round(a);return mc(`A baby rabbit weighs ${a.toFixed(1)} grams. A vet predicts it will weigh about ${b.toFixed(1)} grams at the next visit. About how much weight will the rabbit gain?`,`about ${A} grams`,[`about ${A+10} grams`,`about ${A-10} grams`,`about ${A+1} grams`,`about ${A*10} grams`],`${b.toFixed(1)} ≈ ${Math.round(b)} and ${a.toFixed(1)} ≈ ${Math.round(a)}. ${Math.round(b)} − ${Math.round(a)} = ${A}.`)}
+ const sub=i%2;let a,b,ra,rb;do{a=R(300,9999)/100;b=R(100,9999)/100;ra=Math.round(a);rb=Math.round(b)}while(sub&&ra-rb<1);const A=sub?ra-rb:ra+rb,s=sub?'−':'+';
+ return mc(`What is a reasonable estimate for ${a.toFixed(2)} ${s} ${b.toFixed(2)}?`,A,[A+1,A-1,A+10,A-10],`Round each number to the nearest whole number: ${ra} ${s} ${rb} = ${A}.`)},
+//8
+i=>{const t=R(1,9),h=R(1,99),sw=i%2,a=sw?t/10:h/100,b=sw?h/100:t/10;if(h%10==0&&h>9){}
+ const S=(t*10+h)/100,A=a.toFixed(sw?1:2),B=b.toFixed(sw?2:1);
+ return mc(`What is the sum? Use decimal grids to help. ${a.toFixed(a*10%1?2:1)} + ${b.toFixed(b*10%1?2:1)} = ?`,fmt(S),[fmt(S+.1),fmt(S-.1),fmt((t+h)/100),fmt(S+1)],`Write ${(t/10).toFixed(1)} as ${(t*10/100).toFixed(2)} so both have hundredths: ${(t*10)} + ${h} = ${t*10+h} hundredths = ${fmt(S)}.`)},
+//9
+i=>{if(i==0){const A=R(40,99),B=R(1,9);return mc(`An ant is ${(A/100).toFixed(2)} cm long and an aphid is ${(B/10).toFixed(1)} cm long. How much longer is the ant than the aphid?`,`${fmt((A-B*10)/100)} cm`,[`${fmt((A-B)/100)} cm`,`${fmt((A-B*10)/100+.1)} cm`,`${fmt((A+B*10)/100)} cm`,`${fmt((A-B*10)/100-.1)} cm`],`Write ${(B/10).toFixed(1)} as ${(B*10/100).toFixed(2)}. ${A} − ${B*10} = ${A-B*10} hundredths = ${fmt((A-B*10)/100)}.`)}
+ let a,b;if(i<5){a=R(50,199);if(a%10==0)a++;b=R(1,Math.floor(a/10)-1)*10}else{a=R(150,299);b=R(20,a-30);if(i%2){a-=a%10;if(b%10==0)b++}else{if(b%10)b-=b%10;if(b<10)b=10;if(a%10==0)a++}}
+ const D=a-b;return mc(`What is ${sh(a)} − ${sh(b)}? Use decimal grids to help.`,fmt(D/100),[fmt(D/100+.1),fmt(D/100-.1),fmt(D/100+1),fmt((a+b)/100)],`Line up the decimal points. ${sh(a)} − ${sh(b)} = ${fmt(D/100)}.`)},
+//10
+i=>{if(i==0){const a=R(300,500),b=R(2000,2999),D=a*10-b;return mc(`A diver spent ${(a/10).toFixed(1)} minutes underwater on Monday and ${(b/100).toFixed(2)} minutes on Wednesday. How many more minutes was the diver underwater on Monday?`,`${fmt(D/100)} minutes`,[`${fmt((a-b)/100)} minutes`,`${fmt(D/100+.1)} minutes`,`${fmt(D/100-.1)} minutes`,`${fmt((a*10+b)/100)} minutes`],`${(a/10).toFixed(2)} − ${(b/100).toFixed(2)} = ${fmt(D/100)}.`)}
+ if(i==1){const L=R(1000,1500)/100,Wd=R(80,99)/10,P=2*(L+Wd);return mc(`A poster is ${L.toFixed(2)} meters long on two sides and ${Wd.toFixed(1)} meters long on the other two sides. What is its perimeter?`,`${fmt(P)} meters`,[`${fmt(L+Wd)} meters`,`${fmt(2*L+Wd)} meters`,`${fmt(L+2*Wd)} meters`,`${fmt(P+.1)} meters`],`P = 2 × (${L.toFixed(2)} + ${Wd.toFixed(1)}) = 2 × ${fmt(L+Wd)} = ${fmt(P)} meters.`)}
+ if(i==2){const a=R(101,198),b=R(101,198);return mc(`You know ${a} + ${b} = ${a+b}. Use a similar strategy to find ${fmt(a/100)} + ${fmt(b/100)}.`,fmt((a+b)/100),[fmt((a+b)/10),fmt((a+b)/1000),fmt(a+b),fmt((a+b)/100+1)],`${a} hundredths + ${b} hundredths = ${a+b} hundredths = ${fmt((a+b)/100)}.`)}
+ const a=R(2000,3500),b=R(6000,8000),c=R(20,60),T=(a+b)/100+c;return mc(`The science club spent $${(a/100).toFixed(2)} on trash bags and $${(b/100).toFixed(2)} on boots. They still have $${c} left. How much money did they raise?`,`$${T.toFixed(2)}`,[`$${((a+b)/100).toFixed(2)}`,`$${((a+b)/100-c).toFixed(2)}`,`$${(T+10).toFixed(2)}`,`$${(T-10).toFixed(2)}`],`Money spent plus money left: ${(a/100).toFixed(2)} + ${(b/100).toFixed(2)} + ${c} = ${T.toFixed(2)}.`)},
+//11
+i=>{const n=i==12?R(3,5):R(1,6),np=R(2,6);
+ if(i<4)return mc(`Write 10${sup(np)} as a multiplication expression.`,rep(10,np),[`10 × ${np}`,rep(10,np+1),rep(10,np-1),`${np} × ${np}`],`The exponent ${np} tells how many times 10 is a factor: ${rep(10,np)}.`);
+ if(i<8)return mc(`Write ${rep(10,np)} in exponential form.`,`10${sup(np)}`,[`${np}${sup(10)}`,`10 × ${np}`,`10${sup(np+1)}`,`10${sup(np-1)}`],`10 is used ${np} times as a factor, so it is 10${sup(np)}.`);
+ if(i<12)return mc(`Write ${C(10**n)} as a power of 10.`,`10${sup(n)}`,[`10${sup(n+1)}`,`10${sup(n-1)}`,`${n}${sup(10)}`,`10 × ${n}`],`${C(10**n)} is 1 followed by ${n} zero${n>1?'s':''}, so it equals 10${sup(n)}.`);
+ if(i==12)return mc(`Rachel says 10${sup(n)} = 10 × ${n} = ${10*n}. Do you agree with her solution?`,`No. 10${sup(n)} = ${C(10**n)}`,[`Yes. 10${sup(n)} = ${10*n}`,`No. 10${sup(n)} = ${C(n**10)}`,`No. 10${sup(n)} = ${C(10**(n-1))}`],`10${sup(n)} means ${rep(10,n)}, which is ${C(10**n)}, not 10 × ${n}.`);
+ return mc(`Grace reviewed 10${sup(np)} lines of a computer program. How many lines did she review?`,C(10**np),[C(10*np),C(10**(np-1)),C(10**(np+1)),C(np**10)],`10${sup(np)} = ${rep(10,np)} = ${C(10**np)}.`)},
+//12
+i=>{if(i==0){const a=R(300,799),b=R(11,29),ra=Math.round(a/10)*10,rb=Math.round(b/10)*10,fl=Math.floor(a/100)*100,fb=Math.floor(b/10)*10;
+  return mc(`Which equation shows a reasonable estimate for ${a} × ${b}?`,`${ra} × ${rb} = ${C(ra*rb)}`,[`${fl} × ${fb} = ${C(fl*fb)}`,`${ra} × ${rb} = ${C(ra*rb*10)}`,`${fl+100} × ${fb} = ${C((fl+100)*fb)}`],`Round each factor to the nearest ten: ${ra} × ${rb} = ${C(ra*rb)}.`)}
+ if(i==1){const h=R(1,4)*100,a=h+R(26,49),b=R(35,38),T=["Mia's estimate is greater","Dan's estimate is greater","The estimates are equal","You cannot tell without finding the exact product"];
+  return mc(`To estimate ${a} × ${b}, Dan rounds each factor to its greatest place. Mia uses the compatible numbers ${h+50} × 40. Whose estimate is greater?`,T[0],T.slice(1),`Dan: ${h} × 40 = ${C(h*40)}. Mia: ${h+50} × 40 = ${C((h+50)*40)}. Mia's is greater.`)}
+ const s=R(20,29),r=R(61,79),est=Math.round(s/10)*10*Math.round(r/10)*10*5,met=R(0,1),Y='yes, they met the goal',N='no, they did not meet the goal';
+ return mc(`A club has ${s} students. Each collects ${r} bottles a day for 5 days. The goal is ${met?'5,000':'14,000'} bottles. About how many bottles did they collect, and did they meet the goal?`,`About ${C(est)} bottles; ${met?Y:N}`,[`About ${C(est)} bottles; ${met?N:Y}`,`About ${C(est/10)} bottles; ${met?N:Y}`,`About ${C(est*10)} bottles; ${met?Y:N}`],`${Math.round(s/10)*10} × ${Math.round(r/10)*10} × 5 = ${C(est)}, which is ${met?'more':'less'} than the goal.`)},
+//13
+i=>{if(i==0){const a=R(150,480),b=pick([15,20,25,30,40,50]),P=a*b;return mc(`At a school fundraiser, ${a} donors each give $${b}. How much money does the school collect?`,`$${C(P)}`,[`$${C(P+100)}`,`$${C(P-100)}`,`$${C(P*10)}`,`$${C(a+b)}`],`${a} × ${b} = ${C(P)}.`)}
+ if(i==1){const m=pick([40,50,60,70,80]),n=R(101,199),P=m*n;return mc(`A store has ${m} boxes of shirts with ${n} shirts in each box. How many shirts are there in all?`,C(P),[C(P/10),C(P*10),C(P+m),C(P-100)],`${m} × ${n} = ${C(P)}.`)}
+ if(i==2){const a=R(110,199),o=R(3,9),b=10+o,P=a*b,bad=P+pick([-100,100,-10,10]);return mc(`Raya uses partial products to find ${a} × ${b}. She writes ${C(a*10)} and ${C(a*o)}, then says the product is ${C(bad)}. What can you say about her work?`,`Her partial products are correct, but the sum should be ${C(P)}.`,['Her work is correct.','Her partial products are wrong.',`The product should be ${C(P+1000)}.`],`${a} × 10 = ${C(a*10)} and ${a} × ${o} = ${C(a*o)}. ${C(a*10)} + ${C(a*o)} = ${C(P)}.`)}
+ const a=R(300,499),b=R(500,799),P=a*b;return mc(`Use partial products to find ${a} × ${b}.`,C(P),[C(P+1000),C(P-100),C(P/10),C(P+10000)],`${prt(a).flatMap(p=>prt(b).map(q=>`${C(p)} × ${C(q)} = ${C(p*q)}`)).join('; ')}. Add the partial products: ${C(P)}.`)},
+//14
+i=>{let a,b,q;if(i<8)[a,b]=[[R(101,999),R(11,99)],[R(101,999),R(11,99)],[R(1001,4999),R(11,99)],[R(101,999),R(2,9)]][i%4];
+ else{a=R(2000,4000);b=R(11,40)}
+ const P=a*b,o=b%10,t=b/10|0,q1=i<8?`What is ${C(a)} × ${b}?`:i==8?`The students at a school use about ${C(a)} sheets of paper each day. How many sheets do they use in ${b} days?`:`A factory packs ${C(a)} bolts each day. How many bolts does it pack in ${b} days?`;
+ return mc(q1,C(P),[C(P+10),C(P-10),C(P+100),b>9?C(a*o+a*t):C(P+1000)],b>9?`${C(a)} × ${o} = ${C(a*o)} and ${C(a)} × ${t*10} = ${C(a*t*10)}. Add: ${C(P)}.`:`${C(a)} × ${b} = ${C(P)}.`)},
+//15
+i=>{const e=R(2,4),I=R(11,99),x=I/10,v=I*10**e/10,f=(c,y)=>`${fmt(x)} × ${rep(10,c)} = ${C(y)}`;
+ return mc(`Write ${fmt(x)} × 10${sup(e)} using factors of 10. Then find the value.`,f(e,v),[f(e,v/10),f(e,v*10),f(e-1,v),f(e+1,v*10)],`10${sup(e)} = ${rep(10,e)}. Each factor of 10 moves the decimal point one place right: ${C(v)}.`)},
+//16
+i=>{const a=R(2,9),b=R(2,9),t=i%6;
+ if(i<6){let q,A;if(t==0){const I=R(11,99),c=R(2,9);q=`${(I/10).toFixed(1)} × 0.${c}`;A=I*c/100}else if(t==1||t==3){q=`0.${a} × 0.${b}`;A=a*b/100}else if(t==2){const h=R(11,49),n=R(3,9);q=`${(h/100).toFixed(2)} × ${n}`;A=h*n/100}else if(t==4){const I=R(51,99),J=R(11,19);q=`${(I/10).toFixed(1)} × ${(J/10).toFixed(1)}`;A=I*J/100}else{q=`0.${a} × 0.${a}`;A=a*a/100}
+  return mc(`What is the product? Use a decimal grid or area model. ${q}`,fmt(A),[fmt(A*10),fmt(A/10),fmt(A+.1),fmt(A*100)],`Multiply as whole numbers, then place the decimal point using the number of decimal places in the factors: ${q} = ${fmt(A)}.`)}
+ if(i==6)return mc(`A decimal grid shows ${a} tenths of ${b} tenths shaded. Which equation matches the grid?`,`0.${a} × 0.${b} = ${fmt(a*b/100)}`,[`0.${a} + 0.${b} = ${fmt((a+b)/10)}`,`0.${a} × 0.${b} = ${fmt(a*b/10)}`,`0.${a} × 0.${b} = ${fmt(a*b/1000)}`],`${a} tenths of ${b} tenths is ${a*b} hundredths = ${fmt(a*b/100)}.`);
+ const n=R(2,4),p=R(21,39)*10,c=R(2,8),T=p*c/1000;
+ return mc(`Kristina buys ${n} yards of fabric at $${(p/100).toFixed(2)} per yard. Her friend Norman wants to buy ${c/10} yard of that fabric from her. How much does Norman pay?`,`$${T.toFixed(2)}`,[`$${(T*10).toFixed(2)}`,`$${(T/10).toFixed(2)}`,`$${(p/100*n).toFixed(2)}`,`$${(p/100+c/10).toFixed(2)}`],`${(p/100).toFixed(2)} × ${c/10} = ${T.toFixed(2)}.`)},
+//17
+i=>{if(i==0){const p=R(3,9),k=R(40,80);return mc(`Julio should eat ${p/10} gram of protein each day for every kilogram of his body mass. Julio is ${k} kilograms. How many grams of protein should he eat?`,`${fmt(p*k/10)} grams`,[`${fmt(p*k)} grams`,`${fmt(p*k/100)} grams`,`${fmt(p*k/10+1)} grams`,`${fmt(k+p/10)} grams`],`${p/10} × ${k} = ${fmt(p*k/10)}.`)}
+ if(i==1){const a=R(61,99),t=R(21,39);return mc(`Anita rode her bike ${a/10} miles on Monday and ${t/10} times as far on Tuesday. How far did she ride on Tuesday?`,`${fmt(a*t/100)} miles`,[`${fmt(a*t/10)} miles`,`${fmt(a*t/1000)} miles`,`${fmt((a+t)/10)} miles`,`${fmt(a*t)} miles`],`${a/10} × ${t/10} = ${fmt(a*t/100)}.`)}
+ if(i==2){const p=R(11,19),v=R(21,39);return mc(`Each liter of a solution has ${p/100} liter of an active ingredient. How much active ingredient is in ${v/10} liters of the solution?`,`${fmt(p*v/1000)} liters`,[`${fmt(p*v/100)} liters`,`${fmt(p*v/10000)} liters`,`${fmt(p*v/1000+.1)} liters`,`${fmt(p/100+v/10)} liters`],`${p/100} × ${v/10} = ${fmt(p*v/1000)}.`)}
+ if(i==3){const w=R(21,49),c=R(5,9);return mc(`Jared buys ${w/10} pounds of potatoes. The store charges $0.${c}0 per pound. How much does Jared pay?`,`$${(w*c/100).toFixed(2)}`,[`$${(w*c/10).toFixed(2)}`,`$${(w*c/1000).toFixed(2)}`,`$${(w/10+c/10).toFixed(2)}`,`$${(w*c/100+1).toFixed(2)}`],`${w/10} × 0.${c}0 = ${(w*c/100).toFixed(2)}.`)}
+ const a=R(12,49)/10,b=R(101,199)/100,c=R(2,9)/10;return mc(`How many decimal places will the product ${a.toFixed(1)} × ${b.toFixed(2)} × ${c.toFixed(1)} have?`,'4 decimal places',['3 decimal places','5 decimal places','2 decimal places'],'Add the decimal places of the factors: 1 + 2 + 1 = 4.')},
+//18
+i=>{const m=R(2,9),k=R(2,9),a=R(2,3),b=R(1,a-1),D=m*k*10**a,d=k*10**b,q=m*10**(a-b);
+ if(i==0){const dd=pick([20,30,40,50]),qq=R(2,9)*pick([10,100]);return mc(`There are ${C(dd*qq)} quarters. They are put in rolls of ${dd}. How many rolls are there?`,C(qq),[C(qq*10),C(qq/10),C(qq*100),C(qq+dd)],`Use a basic fact and place value: ${C(dd*qq)} ÷ ${dd} = ${C(qq)}.`)}
+ if(i==1)return mc(`Drew solves ${C(D)} ÷ ${C(d)} by starting with ${m*k} ÷ ${k} = ${m}. He says the quotient is ${C(q/10)}. Is Drew correct?`,`No. The quotient is ${C(q)}.`,[`Yes. The quotient is ${C(q/10)}.`,`No. The quotient is ${C(q*10)}.`,`No. The quotient is ${C(q/100)}.`],`${C(D)} has ${a} zeros and ${C(d)} has ${b}, so the quotient has ${a-b} zero${a-b>1?'s':''}: ${C(q)}.`);
+ if(i==2){const f=pick([20,30,40]),s=R(2,9)*100;return mc(`A building has ${f} floors and a total floor area of ${C(f*s)} square feet. What is the area of each floor?`,`${C(s)} square feet`,[`${C(s*10)} square feet`,`${C(s/10)} square feet`,`${C(s*100)} square feet`,`${C(s+f)} square feet`],`${C(f*s)} ÷ ${f} = ${C(s)}.`)}
+ return mc(`A basic fact is ${m*k} ÷ ${k} = ${m}. You multiply both the dividend and the divisor by 10. How does the quotient compare?`,'It stays the same.',['It is 10 times as great.','It is one-tenth as great.','It is 100 times as great.'],`${m*k*10} ÷ ${k*10} = ${m}. Multiplying both numbers by 10 does not change the quotient.`)},
+//19
+i=>{const Dv=pick([20,30,40,50,60,70,80]),q=pick([4,5,6,7,8,9,40,50,60,70,80,90,200]),d=Dv+R(-2,2),n=Dv*q+R(-Math.floor(Dv/3),Math.floor(Dv/3));
+ if(i==8)return mc(`Cho writes ${C(n)} ÷ ${d} = ${C(q*10)}. Is her calculation reasonable?`,`No. ${C(Dv*q)} ÷ ${Dv} = ${q}, so the answer should be close to ${q}.`,[`Yes. ${C(Dv*q*10)} ÷ ${Dv} = ${q*10}.`,`No. The answer should be close to ${C(q*100)}.`,`Yes. The answer is close to ${q}.`],`Estimate with compatible numbers: ${C(Dv*q)} ÷ ${Dv} = ${q}. Cho's answer is 10 times too large.`);
+ return mc(`What is a reasonable estimate for ${C(n)} ÷ ${d}?`,C(q),[C(q*10),C(q*100),fmt(q/10),C(q+Dv)],`${d} is close to ${Dv} and ${C(n)} is close to ${C(Dv*q)}. ${C(Dv*q)} ÷ ${Dv} = ${q}.`)},
+//20
+i=>{const [d,q]=[[R(21,35),R(21,40)],[R(21,35),R(21,40)],[4,R(100,300)],[R(31,45),R(31,59)],[R(81,99),R(51,89)]][i],D=d*q,ex=`Split ${q} into ${prt(q).join(' + ')}: ${prt(q).map(p=>`${d} × ${p} = ${C(d*p)}`).join('; ')}. The partial quotients add up to ${q}.`;
+ if(i==0)return mc(`A rectangle has an area of ${C(D)} square feet and a width of ${d} feet. What is its length?`,`${q} feet`,[`${q+10} feet`,`${q-10} feet`,`${q+1} feet`,`${q-1} feet`],ex);
+ return mc(`What is ${C(D)} ÷ ${d}? Use an area model and partial quotients.`,q,[q+10,q-10,q+1,q-1],ex)},
+//21
+i=>{const d=()=>[R(2,9),R(2,6),R(2,5)],a=d(),b=d(),c=d(),V=x=>x[0]*x[1]*x[2],J=x=>x.join(' cm by ')+' cm';
+ if(i<2){const k=i;return fr(`A solid is made of ${k?'three':'two'} rectangular prisms joined with no overlap. Prism A is ${J(a)}. Prism B is ${J(b)}.${k?` Prism C is ${J(c)}.`:''} Find the volume of the whole solid.`,(V(a)+V(b)+(k?V(c):0))+' cm³',`A: ${a.join(' × ')} = ${V(a)}. B: ${b.join(' × ')} = ${V(b)}.${k?` C: ${c.join(' × ')} = ${V(c)}.`:''} Add: ${V(a)+V(b)+(k?V(c):0)} cm³.`)}
+ if(i==2)return fr(`A robot is built from two identical pieces. Each piece is made of a prism that is ${J(a)} and a prism that is ${J(b)}, joined with no overlap. What is the volume of the robot?`,2*(V(a)+V(b))+' cm³',`One piece: ${V(a)} + ${V(b)} = ${V(a)+V(b)} cm³. Two pieces: 2 × ${V(a)+V(b)} = ${2*(V(a)+V(b))} cm³.`);
+ if(i==3){const n=R(3,5);return fr(`A sign company makes a letter from ${n} identical rectangular prisms. Each prism is ${a.join(' in. by ')} in. What is the volume of the letter?`,n*V(a)+' cubic inches',`One prism: ${a.join(' × ')} = ${V(a)}. ${n} prisms: ${n} × ${V(a)} = ${n*V(a)} cubic inches.`)}
+ const x=R(3,12);return fr(`Two rectangular prisms have a combined volume of ${3*x} cubic feet. One prism has twice the volume of the other. What is the volume of each prism?`,`${x} and ${2*x} cubic feet`,`Think of the smaller prism as 1 part and the larger as 2 parts. 3 parts = ${3*x}, so 1 part = ${x} and 2 parts = ${2*x}.`)},
+//22
+i=>{const dp2=n=>(n/100).toFixed(2),t=i%4;
+ if(i<6){const a=R(1000,9999),b=t<2?R(100,999)*10:R(1000,9999),S=a+b,dd=n=>n%10?dp2(n):(n/100).toFixed(1);return fr(`Use partial sums to find ${dd(a)} + ${dd(b)}.`,dp2(S),`Add the ones, tenths and hundredths separately, then combine the partial sums. ${dd(a)} + ${dd(b)} = ${dp2(S)}.`)}
+ if(i==6){const a=R(1500,3500),b=R(50,99);return fr(`${nm()} earns $${dp2(a)} shoveling snow. Later, ${nm()=='x'?'':'he'} finds $${dp2(b)} in a backpack. How much money does he have now?`,'$'+dp2(a+b),`Line up the decimal points: ${dp2(a)} + ${dp2(b)} = ${dp2(a+b)}.`)}
+ if(i==7){const a=R(100,200)*10,b=R(1500,2800);return fr(`One suitcase weighs ${(a/100).toFixed(1)} pounds and another weighs ${dp2(b)} pounds. What is the total weight of the two suitcases?`,dp2(a+b)+' pounds',`${(a/100).toFixed(2)} + ${dp2(b)} = ${dp2(a+b)} pounds.`)}
+ const a=R(300,700),b=1000-a+R(-60,60),S=a+b;return fr(`${nm()} wants to run at least 10 miles this week. ${nm()=='x'?'':'She'} ran ${dp2(a)} miles on Tuesday and ${dp2(b)} miles on Wednesday. Did she reach her goal?`,`${dp2(S)} miles; ${S>=1000?'yes':'no'}`,`${dp2(a)} + ${dp2(b)} = ${dp2(S)} miles, which is ${S>=1000?'at least':'less than'} 10 miles.`)},
+//23
+i=>{let a,b;if(i<2){a=R(101,199);b=R(21,49)}else if(i<6)[a,b]=[[R(12,29),R(12,29)],[R(21,49),R(101,199)],[R(30,49),R(60,89)],[R(51,89),R(201,299)]][i-2];else{a=R(101,299);b=R(21,49)}
+ const P=a*b,pp=prt(a).flatMap(p=>prt(b).map(q=>`${C(p)} × ${C(q)} = ${C(p*q)}`)).join('; ');
+ if(i<2)return fr(`Complete an area model for ${a} × ${b}, then find the product.`,C(P),`Use side lengths ${prt(a).join(' + ')} and ${prt(b).join(' + ')}. Partial products: ${pp}. Add them: ${C(P)}.`);
+ if(i<6)return fr(`What is ${a} × ${b}? Use an area model.`,C(P),`Partial products: ${pp}. Add them: ${C(P)}.`);
+ return fr(`An area model has side lengths ${prt(a).join(' + ')} and ${prt(b).join(' + ')}. Write the multiplication equation shown by the model, then find the product.`,`${a} × ${b} = ${C(P)}`,`The sides are ${a} and ${b}. Partial products: ${pp}. Add them: ${C(P)}.`)},
+//24
+i=>{const x=R(11,99),y=R(11,99),P=x*y;
+ if(i==0)return fr(`Given ${x} × ${y} = ${C(P)}, use a pattern to find ${x/10} × ${y} and ${x/100} × ${y}.`,`${fmt(P/10)} and ${fmt(P/100)}`,`${x/10} is one-tenth of ${x}, so the product is one-tenth of ${C(P)}. ${x/100} is one-hundredth of ${x}, so the product is one-hundredth of ${C(P)}.`);
+ if(i==1)return fr(`Given ${x} × ${y} = ${C(P)}, find ${x} × ${y/10} and ${x/10} × ${y/10}.`,`${fmt(P/10)} and ${fmt(P/100)}`,`Each factor that becomes one-tenth makes the product one-tenth: ${fmt(P/10)}, then ${fmt(P/100)}.`);
+ if(i==2)return fr(`Given ${x} × ${y} = ${C(P)}, find ${x/10} × ${y/100}.`,fmt(P/1000),`${x/10} is one-tenth of ${x} and ${y/100} is one-hundredth of ${y}, so the product is ${C(P)} ÷ 1,000 = ${fmt(P/1000)}.`);
+ if(i==3)return fr(`Clarissa says that since ${x/10} is one-tenth of ${x} and ${y/10} is one-tenth of ${y}, the product ${x/10} × ${y/10} is one-tenth of ${x} × ${y}. How do you respond?`,'One-hundredth, not one-tenth',`${x} × ${y} = ${C(P)}. Each factor is one-tenth, so the product is one-tenth of one-tenth: ${x/10} × ${y/10} = ${fmt(P/100)}.`);
+ if(i==4){const u=R(11,49),v=R(11,19);return fr(`Kyle's paper is smudged and the decimal points are lost. It shows ${u} × ${v} = ${u*v}, but the real product was ${(u*v)/100}. Where could the decimal points go?`,`${u/10} × ${v/10} = ${(u*v)/100}`,`The product has 2 decimal places, so the factors together need 2 decimal places. One place in each factor works: ${u/10} × ${v/10} = ${(u*v)/100}.`)}
+ if(i==5){const h=R(11,19),w=R(5,9);return fr(`A rectangular window is ${h/10} meters high and ${w/10} meter wide. What is the area of the window?`,`${fmt(h*w/100)} square meters`,`Area = ${h/10} × ${w/10} = ${fmt(h*w/100)} square meters.`)}
+ if(i==6){const m=R(250,350),g=R(31,59);return fr(`A car averages ${m/10} miles per gallon. How many miles can it travel on ${g/10} gallons of gasoline?`,`${fmt(m*g/100)} miles`,`${m/10} × ${g/10} = ${fmt(m*g/100)} miles.`)}
+ const a=R(30,59),w=R(11,29),c=R(6,9)*10,T=(3*a+w*c/10)/100;return fr(`Dale bought 3 apples at $${(a/100).toFixed(2)} each and ${w/10} pounds of grapes at $${(c/100).toFixed(2)} per pound. How much did he spend?`,'$'+T.toFixed(2),`Apples: 3 × ${(a/100).toFixed(2)} = ${(3*a/100).toFixed(2)}. Grapes: ${w/10} × ${(c/100).toFixed(2)} = ${(w*c/1000).toFixed(2)}. Total: $${T.toFixed(2)}.`)},
+//25
+i=>{if(i==0||i==4){const x=pick([12,15,18,24]),q=R(15,30),N=x*q;let y;do y=x+R(2,5);while(N%y==0);
+  return fr(i?`A florist has ${N} carnations to put in vases with none left over. Should she put ${x} or ${y} carnations in each vase? Explain.`:`Rahim has ${N} tortillas to put into bags. Some bags hold ${x} tortillas and some hold ${y}. Which size should he use so that no tortillas are left over?`,`${x} per bag`,`${N} ÷ ${x} = ${q} with remainder 0. ${N} ÷ ${y} = ${Math.floor(N/y)} with remainder ${N%y}, so only ${x} leaves none over.`)}
+ if(i==1){const s=R(12,19),q=R(60,110),r=R(1,s-1),n=s*q+r;return fr(`${nm()} has ${C(n)} cups to share equally among ${s} water stations. How many cups are left over?`,`${r} cups`,`${C(n)} ÷ ${s} = ${q} with remainder ${r}. Check: ${s} × ${q} + ${r} = ${C(n)}.`)}
+ if(i==2){const t=R(12,48),q=R(100,200);return fr(`One bridge is ${C(t*q)} meters long. It is ${t} times as long as a nearby bridge. How long is the shorter bridge?`,`${q} meters`,`${C(t*q)} ÷ ${t} = ${q}. Check: ${t} × ${q} = ${C(t*q)}.`)}
+ const b=pick([12,15,20,25]),q=R(20,60),r=R(1,b-1),n=b*q+r;return fr(`${nm()} has ${n} trading cards. ${nm()=='x'?'':'He'} puts ${b} cards in each box. How many boxes will he fill, and how many cards are left over?`,`${q} boxes, ${r} cards left over`,`${n} ÷ ${b} = ${q} with remainder ${r}. Check: ${b} × ${q} + ${r} = ${n}.`)}
+];
+// ===== figure helpers =====
+const wf=(f,o)=>(o.fig=f,o);
+const PAL={t:['#7fd0da','#b7ecf1','#4aa8b8'],o:['#efb468','#f8d8a8','#cf8f45']},SK='#17424e';
+const P_=(x,y,z,s,ox,oy)=>[ox+x*s+y*.5*s,oy-z*s-y*.35*s];
+const pl=(pts,f,op,da)=>`<polygon points="${pts.map(p=>p.map(v=>v.toFixed(1)).join(',')).join(' ')}" fill="${f}" fill-opacity="${op==null?1:op}" stroke="${SK}" stroke-width="1"${da?' stroke-dasharray="4 3"':''}/>`;
+const ln=(a,b,w)=>`<line x1="${a[0].toFixed(1)}" y1="${a[1].toFixed(1)}" x2="${b[0].toFixed(1)}" y2="${b[1].toFixed(1)}" stroke="${SK}" stroke-width="${w||.6}"/>`;
+const tx=(p,t,dx,dy,an,fz)=>`<text x="${(p[0]+(dx||0)).toFixed(1)}" y="${(p[1]+(dy||0)).toFixed(1)}" font-size="${fz||12}" font-family="system-ui,sans-serif" fill="#111" text-anchor="${an||'middle'}">${t}</text>`;
+function boxSVG(b,s,ox,oy,col,grid,op,dash){const L=b.l,W=b.w,H=b.h,x0=b.x,y0=b.y,z0=b.z,P=(x,y,z)=>P_(x,y,z,s,ox,oy),c=PAL[col||'t'];
+ const Rt=[P(x0+L,y0,z0),P(x0+L,y0+W,z0),P(x0+L,y0+W,z0+H),P(x0+L,y0,z0+H)],Tp=[P(x0,y0,z0+H),P(x0+L,y0,z0+H),P(x0+L,y0+W,z0+H),P(x0,y0+W,z0+H)],Fr=[P(x0,y0,z0),P(x0+L,y0,z0),P(x0+L,y0,z0+H),P(x0,y0,z0+H)];
+ let o=pl(Rt,c[2],op,dash)+pl(Tp,c[1],op,dash)+pl(Fr,c[0],op,dash);
+ if(grid){for(let i=1;i<L;i++)o+=ln(P(x0+i,y0,z0),P(x0+i,y0,z0+H))+ln(P(x0+i,y0,z0+H),P(x0+i,y0+W,z0+H));
+  for(let k=1;k<H;k++)o+=ln(P(x0,y0,z0+k),P(x0+L,y0,z0+k))+ln(P(x0+L,y0,z0+k),P(x0+L,y0+W,z0+k));
+  for(let j=1;j<W;j++)o+=ln(P(x0,y0+j,z0+H),P(x0+L,y0+j,z0+H))+ln(P(x0+L,y0+j,z0),P(x0+L,y0+j,z0+H))}
+ return o}
+function solidFig(parts,labels,o){o=o||{};const all=o.ghost?[...parts,o.ghost]:parts,mx=Math.max(...all.map(b=>b.x+b.l)),my=Math.max(...all.map(b=>b.y+b.w)),mz=Math.max(...all.map(b=>b.z+b.h)),
+ s=Math.min(26,220/(mx+.5*my),150/(mz+.35*my)),pL=62,pR=66,pT=20,pB=26,w=(mx+.5*my)*s+pL+pR,h=(mz+.35*my)*s+pT+pB,ox=pL,oy=pT+(mz+.35*my)*s;let b='';
+ if(o.base){const q=parts[0],Q=(x,y)=>P_(x,y,0,s,ox,oy);b+=pl([Q(q.x,q.y),Q(q.x+q.l,q.y),Q(q.x+q.l,q.y+q.w),Q(q.x,q.y+q.w)],PAL.o[0],1)}
+ [...parts].sort((a,c)=>a.z-c.z||a.x-c.x).forEach(p=>b+=boxSVG(p,s,ox,oy,o.col,o.grid,o.op));
+ if(o.ghost)b+=boxSVG(o.ghost,s,ox,oy,o.col,o.gg,0,true);
+ (labels||[]).forEach(l=>b+=tx(P_(l[0],l[1],l[2],s,ox,oy),l[3],l[4],l[5],l[6]));
+ return `<svg viewBox="0 0 ${w.toFixed(0)} ${h.toFixed(0)}" width="${w.toFixed(0)}" role="img" aria-label="${o.alt||'Figure'}" style="max-width:100%;height:auto"><rect width="100%" height="100%" rx="8" fill="#fff"/>${b}</svg>`}
+const cubeFig=(L,W,H,o)=>{o=o||{};return solidFig([{x:0,y:0,z:0,l:L,w:W,h:o.fill||H}],[],{col:o.col||'t',grid:true,alt:o.alt,ghost:o.fill||o.ghost?{x:0,y:0,z:0,l:L,w:W,h:H}:null,gg:o.gg})};
+const dimL=(l,w,h,a,b,c,z)=>[[l/2,0,z||0,a,0,16],[l,w/2,z||0,b,14,14,'start'],[0,0,(z||0)+h/2,c,-6,4,'end']];
+function decG(items,gap){const c=11,Gs=c*10,gp=gap||18;let x=4,b='';
+ items.forEach((it,ii)=>{const ng=Math.max(1,Math.ceil(it.n/100));
+  for(let g=0;g<ng;g++){for(let k=0;k<100;k++){const cx=x+Math.floor(k/10)*c,cy=4+(k%10)*c,idx=g*100+k;
+   b+=`<rect x="${cx}" y="${cy}" width="${c}" height="${c}" fill="${idx<it.n?PAL[it.col||'t'][0]:'none'}" stroke="#777" stroke-width=".6"/>`;
+   if(it.cross&&idx>=it.n-it.cross&&idx<it.n)b+=`<path d="M${cx+2} ${cy+2}L${cx+c-2} ${cy+c-2}M${cx+c-2} ${cy+2}L${cx+2} ${cy+c-2}" stroke="#111" stroke-width="1.1"/>`}
+   x+=Gs+(g<ng-1?8:gp)}
+  if(it.sign)b+=tx([x-gp/2-4,4+Gs/2+6],it.sign,0,0,'middle',20)});
+ return `<svg viewBox="0 0 ${x} ${Gs+8}" width="${x}" role="img" aria-label="Decimal grids" style="max-width:100%;height:auto"><rect width="100%" height="100%" rx="8" fill="#fff"/>${b}</svg>`}
+function decO(a,b){const c=14;let s='';for(let col=0;col<10;col++)for(let r=0;r<10;r++){const x=4+col*c,y=4+r*c;s+=`<rect x="${x}" y="${y}" width="${c}" height="${c}" fill="none" stroke="#777" stroke-width=".6"/>`;
+ if(col<a)s+=`<rect x="${x}" y="${y}" width="${c}" height="${c}" fill="#4aa8b8" fill-opacity=".55"/>`;if(r<b)s+=`<rect x="${x}" y="${y}" width="${c}" height="${c}" fill="#e8933a" fill-opacity=".55"/>`}
+ return `<svg viewBox="0 0 148 148" width="148" role="img" aria-label="A decimal grid with ${a} columns and ${b} rows shaded" style="max-width:100%;height:auto"><rect width="100%" height="100%" rx="8" fill="#fff"/>${s}</svg>`}
+function areaFig(top,side,cells){const v=a=>parseFloat(String(a).replace(/,/g,''))||1,tt=top.reduce((a,b)=>a+v(b),0),ts=side.reduce((a,b)=>a+v(b),0),cw=top.map(t=>Math.max(56,280*v(t)/tt)),ch=side.map(t=>Math.max(34,140*v(t)/ts)),x0=46,y0=26;let b='',x=x0;
+ top.forEach((t,j)=>{b+=tx([x+cw[j]/2,y0-8],t);x+=cw[j]});let y=y0;
+ side.forEach((t,i)=>{b+=tx([x0-6,y+ch[i]/2+4],t,0,0,'end');let xx=x0;cw.forEach((w,j)=>{b+=`<rect x="${xx}" y="${y}" width="${w}" height="${ch[i]}" fill="none" stroke="#111" stroke-width="1.2"/>`;const c=cells&&cells[i]&&cells[i][j];if(c)b+=tx([xx+w/2,y+ch[i]/2+4],c);xx+=w});y+=ch[i]});
+ return `<svg viewBox="0 0 ${x+8} ${y+8}" width="${x+8}" role="img" aria-label="Area model" style="max-width:100%;height:auto"><rect width="100%" height="100%" rx="8" fill="#fff"/>${b}</svg>`}
+const tbl=(h,rows)=>`<table class="ft"><thead><tr>${h.map(x=>`<th>${x}</th>`).join('')}</tr></thead><tbody>${rows.map(r=>`<tr>${r.map(x=>`<td>${x}</td>`).join('')}</tr>`).join('')}</tbody></table>`;
+const vm=(a,b)=>{const A=C(a),B='× '+C(b),w=Math.max(A.length,B.length)+1;return `<pre class="vm">${A.padStart(w)}\n${B.padStart(w)}\n${'─'.repeat(w)}</pre>`};
+const rw=(a,b,p1,p2,sm)=>{const w=Math.max(...[a,p1,sm].map(x=>C(x).length),C(b).length+2,C(p2).length+2)+1,pd=s=>s.padStart(w);return `<pre class="vm">${pd(C(a))}\n${pd('× '+C(b))}\n${'─'.repeat(w)}\n${pd(C(p1))}\n${pd('+ '+C(p2))}\n${'─'.repeat(w)}\n${pd(C(sm))}</pre>`};
+const row=(...f)=>`<div class="figrow">${f.join('')}</div>`;
+// ===== overrides with figures =====
+const OG=G.slice();
+G[0]=i=>{const t=i%4;if(t==0||t==2)return OG[0](i);const l=R(3,9),w=R(2,6),h=R(2,5),B=l*w,cf=x=>x+' cubic feet';
+ if(t==1){const L=l*10,Wd=w*5,V=L*Wd*h,cm=x=>C(x)+' cubic meters';
+  return wf(solidFig([{x:0,y:0,z:0,l:6,w:3,h:1.2}],[[3,0,0,L+' m',0,16],[6,1.5,0,Wd+' m',14,12,'start'],[0,0,.6,h+' m deep',-6,4,'end']],{alt:`Swimming pool ${L} m by ${Wd} m, ${h} m deep`}),mc(`The swimming pool shown is ${L} meters long, ${Wd} meters wide, and ${h} meters deep. What is the volume of the pool?`,cm(V),[cm(L+Wd+h),cm(L*Wd),cm(V*2),cm(V/10)],`V = ${L} × ${Wd} × ${h} = ${cm(V)}.`))}
+ return wf(solidFig([{x:0,y:0,z:0,l:3,w:3,h:4}],[[1.5,1.5,0,B+' sq ft',0,16],[0,0,2,h+' ft',-6,4,'end']],{base:true,op:.5,alt:`Prism with base area ${B} square feet`}),mc(`The rectangular prism shown has a base area of ${B} square feet and a height of ${h} feet. Colton says he does not have enough information to find the volume. Is he correct?`,`No. V = B × h = ${cf(B*h)}`,['Yes. You also need the length and the width.',`No. V = B + h = ${cf(B+h)}`,`No. V = B × h = ${cf(B*h*2)}`],`The formula V = B × h uses the base area, so no other measurement is needed: ${B} × ${h} = ${B*h} cubic feet.`))};
+G[1]=i=>{const L=R(2,5),Wd=R(2,4),n=R(2,5),a=L*Wd,V=a*n,s=x=>x+' cubic units',alt=`${L} by ${Wd} base with ${n} layers of unit cubes`;
+ if(i==0)return wf(cubeFig(L,Wd,n,{alt}),mc(`A box is packed with unit cubes. ${a} unit cubes fill the bottom of the box, and there are ${n} layers of unit cubes. What is the volume of the box?`,s(V),[s(a+n),s(a*(n-1)),s(V*2),s(V+a)],`Cubes in one layer × number of layers: ${a} × ${n} = ${V} cubic units.`));
+ if(i==1)return wf(cubeFig(L,Wd,n,{alt}),mc('How many layers of unit cubes are in the figure?',n,[n+1,n-1,a,L+Wd],`Count the layers from bottom to top: ${n}.`));
+ if(i==2)return wf(cubeFig(L,Wd,n,{alt}),mc('How many unit cubes are in each layer of the figure?',a,[a+n,L+Wd,a-L,a*n],`Each layer is ${L} cubes by ${Wd} cubes: ${L} × ${Wd} = ${a}.`));
+ if(i==3||i==4||i==6||i==7)return wf(cubeFig(L,Wd,n,{alt}),mc('Determine the volume of the figure.',s(V),[s(a+n),s(a*(n-1)),s(V*2),s(L+Wd+n)],`Number of layers: ${n}. Number in each layer: ${L} × ${Wd} = ${a}. Volume: ${a} × ${n} = ${V} cubic units.`));
+ if(i==5)return wf(cubeFig(L,Wd,n,{alt,col:'o'}),mc('How can you determine the volume of the box?',`Multiply the ${a} cubes in one layer by the ${n} layers`,[`Add ${a} + ${n}`,`Multiply ${L} × ${Wd} only`,`Add the ${n} layers to ${L}`],`The volume is ${a} × ${n} = ${V} cubic units.`));
+ if(i==8)return wf(cubeFig(L,Wd,n,{alt}),mc('Which equation could you write to determine the volume of this figure?',`(${L} × ${Wd}) × ${n} = ${V}`,[`${L} + ${Wd} + ${n} = ${L+Wd+n}`,`${L} × ${Wd} + ${n} = ${a+n}`,`${L} × ${n} = ${L*n}`],`One layer has ${L} × ${Wd} cubes, and there are ${n} layers: (${L} × ${Wd}) × ${n} = ${V}.`));
+ if(i==9)return wf(cubeFig(L,Wd,5,{fill:1,alt:'A tall box with one layer of cubes shown'}),mc(`The volume of this box is ${V} cubic units. How many layers of unit cubes are in the box? Explain your thinking.`,n,[n+1,a,V-a,n-1],`One layer has ${a} cubes. ${V} ÷ ${a} = ${n} layers.`));
+ const H=R(3,4);return wf(cubeFig(L,Wd,H,{fill:1,gg:true,alt:'A prism partly filled with unit cubes'}),mc('The figure shows a rectangular prism partially filled with unit cubes. What is the volume of the rectangular prism?',s(a*H),[s(a),s(a+H),s(a*(H-1)),s(a*H+a)],`The prism will have ${H} layers of ${a} cubes: ${a} × ${H} = ${a*H} cubic units.`))};
+G[2]=i=>{if(i==2||i==4)return OG[2](i);const h=R(2,6),B=R(3,9)*2,l=R(5,12),w=R(2,4),hh=R(2,4),ft=x=>x+' feet';
+ if(i==0)return wf(solidFig([{x:0,y:0,z:0,l:4,w:2.4,h:2.4}],[[2,1.2,0,B+' sq ft',0,18],[4,0,1.2,'? ft',34,4,'start']],{base:true,op:.45,alt:'Fish tank with base area '+B}),mc(`A fish tank has a volume of ${B*h} cubic feet. Its base is ${B} square feet. What is the height of the tank?`,ft(h),[ft(B*h-B),ft(B*h*B),ft(h+1),ft(B)],`V = B × h, so ${B*h} = ${B} × h and h = ${B*h} ÷ ${B} = ${h} feet.`));
+ if(i==1){let A=[R(10,22),R(8,14),R(8,14)],Bx=[R(10,22),R(8,14),R(8,14)];const v=x=>x[0]*x[1]*x[2];while(v(A)==v(Bx))Bx=[R(10,22),R(8,14),R(8,14)];
+  const T=['Suitcase A','Suitcase B','They have the same volume','There is not enough information'],a=v(A)>v(Bx)?0:1,fg=(d,n)=>`<div class="cap">${n}${solidFig([{x:0,y:0,z:0,l:d[0],w:d[1],h:d[2]}],dimL(d[0],d[1],d[2],d[0]+' in.',d[1]+' in.',d[2]+' in.'),{alt:`${n}: ${d.join(' by ')} inches`})}</div>`;
+  return wf(row(fg(A,'Suitcase A'),fg(Bx,'Suitcase B')),mc('Lillian wants to buy the suitcase with the greater volume. Which suitcase should she buy?',T[a],T.filter((x,j)=>j!=a),`A: ${A.join(' × ')} = ${v(A)} cubic in. B: ${Bx.join(' × ')} = ${v(Bx)} cubic in. ${T[a]} has the greater volume.`))}
+ return wf(solidFig([{x:0,y:0,z:0,l:l/2,w:w/2,h:hh/2}],[[l/4,0,0,ft(l),0,16],[l/2,w/4,0,'? ft',14,14,'start'],[0,0,hh/4,ft(hh),-6,4,'end']],{alt:'Rabbit hutch'}),mc(`The volume of this rabbit hutch is ${l*w*hh} cubic feet. What is the width of the hutch?`,ft(w),[ft(w*hh),ft(l*hh),ft(w+1),ft(l*w*hh-l-hh)],`${l*w*hh} = ${l} × w × ${hh}, so w = ${l*w*hh} ÷ ${l*hh} = ${w} feet.`))};
+G[3]=i=>{if(i)return OG[3](i);const d=R(2,9),k=R(0,4),g=PL.map(()=>{let x;do x=R(1,9);while(x==d);return x});g[k]=g[k+1]=d;const dg=[...g].reverse(),num=C(+dg.join(''));
+ const fg=tbl(['Hundred thousands','Ten thousands','Thousands','Hundreds','Tens','Ones'],[dg.map((x,j)=>{const p=5-j;return p==k||p==k+1?`<b class="hl">${x}</b>`:x})]);
+ return wf(fg,mc(`Use the place-value chart to complete the sentence. In ${num}, the value of the digit ${d} in the ${PL[k+1]} place is 10 times the value of the digit ${d} in the ____ place.`,PL[k],[PL[(k+2)%6],PL[(k+3)%6],PL[(k+4)%6],PL[k+1]],`Each place is worth 10 times the place to its right, so the ${d} in the ${PL[k+1]} place is 10 times the ${d} in the ${PL[k]} place.`))};
+G[5]=i=>{if(i!=11)return OG[5](i);const t=R(21,99)/10,ins=[t-.04,t+.03,t,t+.02,t-.01],outs=[t+.06,t-.06,t+.1,t-.1,t+.09],c=R(1,4),L=[...ins.slice(0,c),...outs.slice(0,5-c)];for(let j=4;j>0;j--){const k=R(0,j);[L[j],L[k]]=[L[k],L[j]]}
+ return wf(tbl(['Number','Yes','No'],L.map(x=>[x.toFixed(2),'',''])),mc(`The table lists five numbers. How many of them round to ${t.toFixed(1)} when rounded to the nearest tenth?`,c,[c+1,c-1,5-c,c+2],`A number rounds to ${t.toFixed(1)} if it is from ${(t-.05).toFixed(2)} up to just below ${(t+.05).toFixed(2)}. ${c} of the numbers do.`))};
+G[7]=i=>{const sw=i%2,tn=R(1,9),hd=R(1,99),a=sw?tn*10:hd,b=sw?hd:tn*10,S=a+b;
+ return wf(decG([{n:a,col:'t',sign:'+'},{n:b,col:'o'}]),mc(`What is the sum? Use the decimal grids to solve. ${sh(a)} + ${sh(b)} = ?`,fmt(S/100),[fmt(S/100+.1),fmt(S/100-.1),fmt((a/10+b/10)/100*10),fmt(S/100+1)],`${a} hundredths + ${b} hundredths = ${S} hundredths = ${fmt(S/100)}.`))};
+G[8]=i=>{if(i>4)return OG[8](i);
+ if(i==0){const A=R(40,99),B=R(1,9),bt=R(60,99),lb=R(30,59);return wf(row(tbl(['Insect','Length (cm)'],[['Beetle',(bt/100).toFixed(2)],['Ant',(A/100).toFixed(2)],['Ladybug',(lb/100).toFixed(2)],['Aphid',(B/10).toFixed(1)]]),decG([{n:A,cross:B*10,col:'t'}])),mc('The table shows the lengths of different insects. How much longer is the ant than the aphid? Use the decimal grid to help.',`${fmt((A-B*10)/100)} cm`,[`${fmt((A-B)/100)} cm`,`${fmt((A-B*10)/100+.1)} cm`,`${fmt((A+B*10)/100)} cm`,`${fmt((A-B*10)/100-.1)} cm`],`Write ${(B/10).toFixed(1)} as ${(B*10/100).toFixed(2)}. ${A} − ${B*10} = ${A-B*10} hundredths = ${fmt((A-B*10)/100)}.`))}
+ let a,b;if(i==1){a=R(31,99);if(a%10==0)a++;b=R(1,Math.floor(a/10)-1)*10}else if(i==2){a=R(3,9)*10;b=R(1,9)}else{a=R(101,199);if(a%10==0)a++;b=R(2,9)*10}
+ const D=a-b;return wf(decG([{n:a,cross:b,col:'t'}]),mc(`What is the difference? Use the decimal grids to solve. ${sh(a)} − ${sh(b)}`,fmt(D/100),[fmt(D/100+.1),fmt(D/100-.1),fmt(D/100+1),fmt((a+b)/100)],`Cross out ${sh(b)} from ${sh(a)}. ${D} hundredths are left: ${fmt(D/100)}.`))};
+G[9]=i=>{if(i)return OG[9](i);const a=R(300,500),b=R(2000,2999),tu=R(3500,5000),D=a*10-b;
+ return wf(tbl(['Day of the week','Length of time'],[['Monday',(a/10).toFixed(1)+' min'],['Tuesday',(tu/100).toFixed(2)+' min'],['Wednesday',(b/100).toFixed(2)+' min']]),mc('A diver recorded the time spent underwater last week, as shown in the table. How much more time did the diver spend underwater on Monday than on Wednesday?',`${fmt(D/100)} minutes`,[`${fmt((a-b)/100)} minutes`,`${fmt(D/100+.1)} minutes`,`${fmt(D/100-.1)} minutes`,`${fmt((a*10+b)/100)} minutes`],`${(a/10).toFixed(2)} − ${(b/100).toFixed(2)} = ${fmt(D/100)}.`))};
+G[12]=i=>{if(i!=2)return OG[12](i);const a=R(110,199),o=R(3,9),b=10+o,P=a*b,bad=P+pick([-100,100,-10,10]);
+ return wf(rw(a,b,a*10,a*o,bad),mc(`Raya used partial products to find ${a} × ${b}. Her work is shown. What can you say about Raya's work?`,`Her partial products are correct, but the sum should be ${C(P)}.`,['Her work is correct.','Her partial products are wrong.',`The product should be ${C(P+1000)}.`],`${a} × 10 = ${C(a*10)} and ${a} × ${o} = ${C(a*o)}. ${C(a*10)} + ${C(a*o)} = ${C(P)}.`))};
+G[13]=i=>{if(i>7)return OG[13](i);const[a,b]=[[R(101,999),R(11,99)],[R(101,999),R(11,99)],[R(1001,4999),R(11,99)],[R(101,999),R(2,9)]][i%4],P=a*b,o=b%10,t=b/10|0;
+ return wf(vm(a,b),mc('What is the product?',C(P),[C(P+10),C(P-10),C(P+100),b>9?C(a*o+a*t):C(P+1000)],b>9?`${C(a)} × ${o} = ${C(a*o)} and ${C(a)} × ${t*10} = ${C(a*t*10)}. Add: ${C(P)}.`:`${C(a)} × ${b} = ${C(P)}.`))};
+G[15]=i=>{if(i!=6)return OG[15](i);const a=R(2,9),b=R(2,9);
+ return wf(decO(a,b),mc('Write an equation to show the product represented by the decimal grid.',`0.${a} × 0.${b} = ${fmt(a*b/100)}`,[`0.${a} + 0.${b} = ${fmt((a+b)/10)}`,`0.${a} × 0.${b} = ${fmt(a*b/10)}`,`0.${a} × 0.${b} = ${fmt(a*b/1000)}`],`The overlap is ${a} columns by ${b} rows. ${a} tenths of ${b} tenths is ${a*b} hundredths = ${fmt(a*b/100)}.`))};
+G[18]=i=>{if(i!=8)return OG[18](i);const Dv=pick([20,30,40,50,60,70,80]),q=pick([4,5,6,7,8,9,40,50,60,70,80,90]),d=Dv+R(-2,2),n=Dv*q+R(-Math.floor(Dv/3),Math.floor(Dv/3));
+ return wf(`<div class="note">${C(n)} ÷ ${d} = ${C(q*10)}</div>`,mc('Cho writes the equation shown. Is her calculation reasonable?',`No. ${C(Dv*q)} ÷ ${Dv} = ${q}, so the answer should be close to ${q}.`,[`Yes. ${C(Dv*q*10)} ÷ ${Dv} = ${q*10}.`,`No. The answer should be close to ${C(q*100)}.`,`Yes. The answer is close to ${q}.`],`Estimate with compatible numbers: ${C(Dv*q)} ÷ ${Dv} = ${q}. Cho's answer is 10 times too large.`))};
+G[19]=i=>{if(i)return OG[19](i);const d=R(21,35),q=R(21,40);
+ return wf(areaFig(['?'],[String(d)],[[C(d*q)]]),mc(`The area model shows a rectangle with an area of ${C(d*q)} square feet and a width of ${d} feet. What is its length?`,`${q} feet`,[`${q+10} feet`,`${q-10} feet`,`${q+1} feet`,`${q-1} feet`],`Split ${q} into ${prt(q).join(' + ')}: ${prt(q).map(p=>`${d} × ${p} = ${C(d*p)}`).join('; ')}. The partial quotients add up to ${q}.`))};
+const ptot=(x,y,z,l,w,h)=>({x,y,z,l,w,h});
+G[20]=i=>{const l=R(5,9),w=R(2,4),h1=R(1,3),l2=R(3,l-1),h2=R(2,4),l3=R(2,l2-1),h3=R(2,4),VA=l*w*h1,VB=l2*w*h2,VC=l3*w*h3,u=' cm';
+ const lab=(l,w,h1,l2,h2)=>[[l/2,0,0,l+'',0,16],[l,w/2,0,w+'',14,14,'start'],[0,0,h1/2,h1+'',-6,4,'end'],[l2/2,0,h1+h2,l2+'',0,-6],[0,0,h1+h2/2,h2+'',-6,4,'end']];
+ if(i==0||i==2){const f=solidFig([ptot(0,0,0,l,w,h1),ptot(0,0,h1,l2,w,h2)],lab(l,w,h1,l2,h2),{alt:`Solid made of two prisms. Lengths ${l} and ${l2}, width ${w}, heights ${h1} and ${h2} centimeters`});
+  if(i==0)return wf(f,fr('Find the volume of the solid shown. All measurements are in centimeters.',(VA+VB)+' cm³',`Bottom prism: ${l} × ${w} × ${h1} = ${VA}. Top prism: ${l2} × ${w} × ${h2} = ${VB}. Add: ${VA+VB} cm³.`));
+  return wf(f,fr('A robot will be built from two pieces like the one shown. All measurements are in centimeters. What is the volume of the robot?',2*(VA+VB)+' cm³',`One piece: ${VA} + ${VB} = ${VA+VB} cm³. Two pieces: 2 × ${VA+VB} = ${2*(VA+VB)} cm³.`))}
+ if(i==1){const f=solidFig([ptot(0,0,0,l,w,h1),ptot(0,0,h1,l2,w,h2),ptot(0,0,h1+h2,l3,w,h3)],[[l/2,0,0,l+'',0,16],[l,w/2,0,w+'',14,14,'start'],[0,0,h1/2,h1+'',-6,4,'end'],[0,0,h1+h2/2,h2+'',-6,4,'end'],[0,0,h1+h2+h3/2,h3+'',-6,4,'end'],[l2/2,0,h1+h2,l2+'',0,-6],[l3/2,0,h1+h2+h3,l3+'',0,-6]],{alt:'Staircase-shaped solid made of three prisms'});
+  return wf(f,fr('Find the volume of the solid shown. All measurements are in centimeters.',(VA+VB+VC)+' cm³',`Bottom: ${l} × ${w} × ${h1} = ${VA}. Middle: ${l2} × ${w} × ${h2} = ${VB}. Top: ${l3} × ${w} × ${h3} = ${VC}. Add: ${VA+VB+VC} cm³.`))}
+ if(i==3){const a=R(8,14),s=R(2,5);return wf(solidFig([ptot(0,0,0,a,s,s),ptot((a-s)/2,0,s,s,s,a),ptot(0,0,s+a,a,s,s)],[[a/2,0,0,a+' in.',0,16],[a,s/2,0,s+' in.',14,14,'start'],[0,0,s/2,s+' in.',-6,4,'end']],{alt:`Letter I made from three prisms, each ${a} by ${s} by ${s} inches`}),fr(`A sign company made this letter using rectangular prisms. Each prism is ${a} inches by ${s} inches by ${s} inches. What is the volume of the letter? Explain.`,3*a*s*s+' cubic inches',`The letter uses 3 identical prisms. One prism: ${a} × ${s} × ${s} = ${a*s*s}. Three prisms: 3 × ${a*s*s} = ${3*a*s*s} cubic inches.`))}
+ return OG[20](i)};
+G[21]=i=>{if(i>1)return OG[21](i);const a=R(1000,5000),b=R(100,999)*10,dx=n=>[...prt(Math.floor(n/100)),...(Math.floor(n/10)%10?[fmt((Math.floor(n/10)%10)/10)]:[]),...(n%10?[fmt((n%10)/100)]:[])],sm=a+b,f=n=>(n/100).toFixed(n%10?2:1);
+ return fr(`What is the sum? Use partial sums to solve. ${f(a)} + ${f(b)} = ${[...dx(a),...dx(b)].join(' + ')} = ?`,(sm/100).toFixed(2),`Add the partial sums: ${[...dx(a),...dx(b)].join(' + ')} = ${(sm/100).toFixed(2)}.`)};
+G[22]=i=>{let a,b;if(i<2){a=R(101,199);b=R(21,49)}else if(i<6)[a,b]=[[R(12,29),R(12,29)],[R(21,49),R(101,199)],[R(30,49),R(60,89)],[R(51,89),R(201,299)]][i-2];else{a=R(101,299);b=R(21,49)}
+ const P=a*b,pp=prt(a).flatMap(p=>prt(b).map(q=>`${C(p)} × ${C(q)} = ${C(p*q)}`)).join('; '),ta=prt(a).map(String),sb=prt(b).map(String);
+ if(i<2){const cl=[[C(prt(a)[0]*prt(b)[0])]];return wf(areaFig(ta,sb,cl),fr('Complete the area model. Then solve to find the product.',C(P),`Side lengths ${ta.join(' + ')} and ${sb.join(' + ')}. Partial products: ${pp}. Add them: ${C(P)}.`))}
+ if(i<6)return wf(areaFig([String(a)],[String(b)],[['']]),fr(`What is ${a} × ${b}? Use an area model to solve.`,C(P),`Partial products: ${pp}. Add them: ${C(P)}.`));
+ return wf(areaFig(ta,sb,null),fr('Write the multiplication equation based on the area model. Then solve to find the product.',`${a} × ${b} = ${C(P)}`,`The sides are ${a} and ${b}. Partial products: ${pp}. Add them: ${C(P)}.`))};
+G[24]=i=>{if(i)return OG[24](i);const x=pick([12,15,18,24]),q=R(15,30),N=x*q;let y;do y=x+R(2,5);while(N%y==0);
+ return wf(`<pre class="vm">${String(y).padStart(3)})${N}      ${String(x).padStart(3)})${N}</pre>`,fr(`Rahim has ${N} tortillas to put into bags. Some bags hold ${x} tortillas and some hold ${y}. Which size should he use so that no tortillas are left over?`,`${x} per bag`,`${N} ÷ ${x} = ${q} with remainder 0. ${N} ÷ ${y} = ${Math.floor(N/y)} with remainder ${N%y}, so only ${x} leaves none over.`))};
+const N=[4,11,5,8,12,13,8,8,9,4,14,3,4,10,4,8,5,4,9,5,5,9,8,8,5],LN=[1,2,8,19,24];
+const st=[],qs=document.getElementById('qs'),dots=document.getElementById('dots');let cur=0,T=0;
+const lab=(q,i)=>LN.includes(q)?(i?String(i):'Learn'):String(i+1);
+N.forEach((n,qi)=>{
+ seed=qi*7919+13;const ps=[];for(let i=0;i<n;i++)ps.push(G[qi](i));
+ st.push(ps.map(()=>({sel:null,done:false,v:null})));if(qi<20)T+=n;
+ const s=document.createElement('section');s.className='q';
+ let h=`<div class="tag">${qi<20?'Multiple choice':'Free response'}</div><h2>Question ${qi+1}</h2>`;
+ ps.forEach((p,pi)=>{h+=`<div class="part"><div class="lab">${lab(qi,pi)}</div><p>${p.q}</p>${p.fig?'<div class="fig">'+p.fig+'</div>':''}`+(p.o?p.o.map((o,k)=>`<button class="opt" data-k="${k}">${'ABCD'[k]}. ${o}</button>`).join(''):'<textarea placeholder="Write your working and answer here." aria-label="Your answer"></textarea><div class="lines"></div>')+'<div class="fb" aria-live="polite"></div><button class="chk">Check answer</button></div>'});
+ h+='<div class="nav"><button class="alt prev">Back</button><button class="nxt">Next question</button></div>';
+ s.innerHTML=h;qs.appendChild(s);
+ const b=document.createElement('button');b.textContent=qi+1;b.onclick=()=>go(qi);dots.appendChild(b);
+ s.querySelector('.prev').onclick=()=>go(qi-1);s.querySelector('.nxt').onclick=()=>go(qi+1);
+ s.querySelectorAll('.part').forEach((el,pi)=>{const p=ps[pi],x=st[qi][pi],fb=el.querySelector('.fb'),ch=el.querySelector('.chk');
+  el.querySelectorAll('.opt').forEach(o=>o.onclick=()=>{if(x.done)return;x.sel=+o.dataset.k;el.querySelectorAll('.opt').forEach(y=>y.classList.toggle('sel',y===o))});
+  ch.onclick=()=>{
+   if(p.o){if(x.sel===null){fb.className='fb show info';fb.textContent='Choose an answer first.';return}
+    x.v=x.sel===p.a?1:0;el.querySelectorAll('.opt').forEach((o,k)=>{o.disabled=true;if(k===p.a)o.classList.add('right');else if(k===x.sel)o.classList.add('wrong')});
+    fb.className='fb show '+(x.v?'right':'wrong');fb.innerHTML=`<b>${x.v?'Correct.':'Not quite. The correct answer is '+'ABCD'[p.a]+'.'}</b>${p.e}`}
+   else{fb.className='fb show info';fb.innerHTML=`<b>Answer: ${p.ans}</b>${p.e}<div class="mk">How did you do? <button data-m="1">Right</button><button data-m="0.5">Partly right</button><button data-m="0">Not right</button></div>`;
+    fb.querySelectorAll('.mk button').forEach(m=>m.onclick=()=>{x.v=+m.dataset.m;fb.querySelectorAll('.mk button').forEach(y=>y.classList.toggle('sel',y===m));upd()})}
+   x.done=true;ch.disabled=true;upd()}});
+});
+function upd(){let sc=0;st.forEach((q,i)=>{if(i<20)q.forEach(x=>{if(x.v===1)sc++});
+ const g=q.filter(x=>x.v!==null),sum=g.reduce((a,x)=>a+x.v,0),all=g.length==q.length,b=dots.children[i];
+ const c=!g.length?'':all&&sum==q.length?'g':all&&sum==0?'r':'o',sy={g:'✓',r:'✕',o:'◐','':''}[c];
+ b.className=(c?c+' ':'')+(i===cur?'cur':'');b.textContent=(i+1)+sy;
+ b.setAttribute('aria-label',`Question ${i+1}`+(g.length?`: ${sum} of ${q.length} correct`:': not started'));b.title=g.length?`${sum} of ${q.length} correct`:'Not started'});
+ document.getElementById('score').textContent='Multiple choice score: '+sc+' / '+T}
+function go(n){if(n<0||n>=N.length)return;cur=n;[...qs.children].forEach((q,i)=>q.classList.toggle('show',i===n));upd();window.scrollTo(0,0)}
+document.getElementById('pr').onclick=()=>{
+ const p=prompt('Enter the password to print:');if(p===null)return;
+ if(btoa(p)==='UHJpbnRAMTIz'){document.body.classList.add('ok');window.print();setTimeout(()=>document.body.classList.remove('ok'),500)}
+ else alert('Wrong password.')};
+window.addEventListener('afterprint',()=>document.body.classList.remove('ok'));
+go(0);
+</script>
+</body></html>
